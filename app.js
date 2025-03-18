@@ -1,1 +1,9 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+//Agregamos una lista de nombres con dos campos de prueba.
+let nombres = ["Nombre 1", "Nombre 2"];
+
+//Para comprobar que la lista funciona la mostramos con un for que agrega elementos li en html.
+nombres.forEach(nombre => {
+    const lista = document.createElement("li");
+    lista.textContent = nombre;
+    listaAmigos.appendChild(lista);
+});
