@@ -1,5 +1,5 @@
-//Agregamos una lista de nombres con dos campos de prueba.
-let nombres = ["Nombre 1", "Nombre 2"];
+//lista vacía.
+let nombres = [];
 
 //Se eliminaron las comprobaciones y agregamos una constante que refiere a la lista de amigos.
 const listaAmigos = document.getElementById("listaAmigos")
@@ -27,4 +27,18 @@ function actualizarListaAmigos() {
         lista.textContent = nombre;
         listaAmigos.appendChild(lista);
     });
+}
+
+//Agregamos una funcion para sortear amigos con un if para que no se intente sortear una cantidad invalida de amigos.
+function sortearAmigo() {
+    if (nombres.length < 2) {
+        alert("No hay suficientes amigos para sortear.")
+        return
+    }
+
+    //usamos math.floor y math.random para el numero aleatorio.
+    const numeroAleatorio = Math.floor(Math.random() * nombres.length);
+    const ganador = nombres[numeroAleatorio]
+    //actualizamos el HTML con innerHTML.
+    resultado.innerHTML = `<p>¡El amigo ganador es: ${ganador}!</p>`;
 }
